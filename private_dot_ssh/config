@@ -1,0 +1,18 @@
+Host magi
+    HostName magi
+    User root
+    PreferredAuthentications publickey
+
+Host github.com
+    HostName github.com
+    IdentityFile ~/.ssh/git.ed25519
+
+Host gitlab.com
+    HostName gitlab.com
+    IdentityFile ~/.ssh/git.ed25519
+
+Host *
+    IdentitiesOnly yes
+    Compression yes
+    SendEnv LANG LC_*
+    IdentityFile ~/.ssh/default.ed25519
