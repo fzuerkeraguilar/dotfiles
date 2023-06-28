@@ -5,7 +5,7 @@ chsh -s $(which zsh)
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install zsh curl ripgrep
 {{ end -}}
-if [[ -d "$HOME/.oh-my-zsh" ]]; then
+if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "oh-my-zsh already installed"
 else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
