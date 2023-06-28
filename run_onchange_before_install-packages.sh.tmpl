@@ -1,9 +1,9 @@
 #!/bin/sh
 {{ if eq .chezmoi.os "linux" -}}
-sudo apt install zsh curl ripgrep openssh-client nano
+sudo apt install zsh curl ripgrep openssh-client nano git
 chsh -s $(which zsh)
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install zsh curl ripgrep openssh nano
+brew install zsh curl ripgrep openssh nano git
 {{ end -}}
 if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "oh-my-zsh already installed"
