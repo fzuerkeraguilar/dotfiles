@@ -1,5 +1,6 @@
+{{ $email := promptString "email" "fzuerker@gmail.com"}}
 [http]
 	proxy = 
 [user]
-	email = {{ .email | quote }}
+	email = {{ $email | quote }}
 	name = Fabian Zürker Aguilar
