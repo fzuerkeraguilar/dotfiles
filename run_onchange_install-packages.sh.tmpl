@@ -5,7 +5,6 @@ chsh -s $(which zsh)
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install zsh curl ripgrep
 {{ end -}}
-exec zsh
 if [[ -d "$HOME/.oh-my-zsh" ]]; then
 
 else
