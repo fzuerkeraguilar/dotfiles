@@ -4,7 +4,7 @@
 sudo apt install zsh curl ripgrep openssh-client nano git
 chsh -s $(which zsh)
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install zsh curl ripgrep openssh nano git
+brew install zsh curl ripgrep openssh nano git mcfly thefuck
 {{ end -}}
 if [ -d "$HOME/.oh-my-zsh" ]; then
     echo "oh-my-zsh already installed"
