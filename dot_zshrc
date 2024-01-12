@@ -123,3 +123,4 @@ unset __conda_setup
 
 
 eval $(thefuck --alias)
+eval "$(mcfly init zsh)"
