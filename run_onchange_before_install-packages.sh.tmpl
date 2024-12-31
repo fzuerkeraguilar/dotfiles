@@ -1,13 +1,23 @@
 #!/bin/bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-{{ if eq .chezmoi.os "linux" -}}
-sudo apt install zsh curl ripgrep openssh-client nano git
-chsh -s $(which zsh)
-{{ else if eq .chezmoi.os "darwin" -}}
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Check if Homebrew is installed
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+    echo "Homebrew is already installed"
+fi
+
 brew install zsh curl ripgrep nano git mcfly thefuck
+{{ else if eq .chezmoi.os "linux" -}}
+sudo apt install -y zsh curl ripgrep openssh-client nano git
+chsh -s $(which zsh)
 {{ end -}}
+
+# Check if oh-my-zsh is installed
 if [ -d "$HOME/.oh-my-zsh" ]; then
-    echo "oh-my-zsh already installed"
+    echo "oh-my-zsh is already installed"
 else
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 fi
+
