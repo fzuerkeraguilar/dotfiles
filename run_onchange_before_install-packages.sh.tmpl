@@ -8,7 +8,7 @@ else
     echo "Homebrew is already installed"
 fi
 
-brew install zsh curl ripgrep nano git mcfly thefuck
+brew install zsh curl ripgrep nano git mcfly thefuck ffmpeg
 {{ else if eq .chezmoi.os "linux" -}}
 sudo apt install -y zsh curl ripgrep openssh-client nano git
 chsh -s $(which zsh)
